@@ -7,49 +7,46 @@ describe('Snake', function() {
     it('should create a snake', function () {
       var snake = new Snake();
       assert.isObject(snake);
-      });
+    });
+
     it('should take all these attributes', function () {
       var snake = new Snake(10, 10, 30, 30);
       assert.equal(snake.x, 10);
       assert.equal(snake.y, 10);
       assert.equal(snake.height, 30);
       assert.equal(snake.width, 30);
-      });
+    });
 
-// TEST MOVE() METHOD
-  // context('snake direction', function() {
-  //   it('"move()" should move the snake continuously in the specified direction', function() {
-  //     var currentDirection = this.direction;
-  //     var x = this.x;
-  //     currentDirection.moveDirection();
-  //     assert.equal(currentDirection, 'right');
-  //   });
-
-    it('"moveRightDirection()" should increment the "x" property by 1', function() {
+    it('"moveRight()" should increment the "x" property by 1', function() {
       var snake = new Snake(10, 10);
-      snake.moveRightDirection();
+      snake.moveRight();
       assert.equal(snake.x, 11);
     });
-    it('"moveLeftDirection()" should decrement the "x" property by 1', function() {
+
+    it('"moveLeft()" should decrement the "x" property by 1', function() {
       var snake = new Snake(10, 10);
-      snake.moveLeftDirection();
+      snake.moveLeft();
       assert.equal(snake.x, 9);
     });
-    it('"moveUpDirection()" should increase the "y" property by 1', function() {
+
+    it('"moveUp()" should increase the "y" property by 1', function() {
       var snake = new Snake(10, 10);
-      snake.moveUpDirection();
+      snake.moveUp();
       assert.equal(snake.y, 11);
     });
-    it('"moveDownDirection()" should decrement the "y" property by 1', function() {
+
+    it('"moveDown()" should decrement the "y" property by 1', function() {
       var snake = new Snake(10, 10);
-      snake.moveDownDirection();
+      snake.moveDown();
       assert.equal(snake.y, 9);
     });
+
     it('"grow()" should increase the width property by 2', function() {
       var snake = new Snake(10, 10, 30);
       snake.grow();
       assert.equal(snake.width, 32);
     });
+    
     it('should be an array', function() {
       assert.equal([], 0);
     });
