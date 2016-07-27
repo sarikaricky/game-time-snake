@@ -36,19 +36,22 @@ describe('Snake', function() {
       assert.equal(snake.x, 9);
     });
     it('"moveUpDirection()" should increase the "y" property by 1', function() {
-        var snake = new Snake(10, 10);
-        snake.moveUpDirection();
-        assert.equal(snake.y, 11);
+      var snake = new Snake(10, 10);
+      snake.moveUpDirection();
+      assert.equal(snake.y, 11);
     });
     it('"moveDownDirection()" should decrement the "y" property by 1', function() {
-        var snake = new Snake(10, 10);
-        snake.moveDownDirection();
-        assert.equal(snake.y, 9);
+      var snake = new Snake(10, 10);
+      snake.moveDownDirection();
+      assert.equal(snake.y, 9);
     });
     it('"grow()" should increase the width property by 2', function() {
-        var snake = new Snake(10, 10, 30);
-        snake.grow();
-        assert.equal(snake.width, 32);
+      var snake = new Snake(10, 10, 30);
+      snake.grow();
+      assert.equal(snake.width, 32);
+    });
+    it('should be an array', function() {
+      assert.equal([], 0);
     });
   });
 });
