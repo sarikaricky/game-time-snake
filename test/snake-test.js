@@ -15,21 +15,16 @@ describe('Snake', function() {
       assert.equal(snake.height, 30);
       assert.equal(snake.width, 30);
       });
-    });
 
-  context('snake direction', function() {
-    it('"move()" should move the snake continuously in the specified direction', function() {
-      var currentDirection = this.direction;
-      var x = this.x;
-      currentDirection.moveDirection();
-      assert.equal(snake.x, this.x + 1);
-    });
+// TEST MOVE() METHOD
+  // context('snake direction', function() {
+  //   it('"move()" should move the snake continuously in the specified direction', function() {
+  //     var currentDirection = this.direction;
+  //     var x = this.x;
+  //     currentDirection.moveDirection();
+  //     assert.equal(currentDirection, 'right');
+  //   });
 
-    // Snake.prototype.moveDirection = function() {
-    //   if(currentDirection === 'right') {
-    //     this.moveRightDirection();
-    //   }
-  
     it('"moveRightDirection()" should increment the "x" property by 1', function() {
       var snake = new Snake(10, 10);
       snake.moveRightDirection();
