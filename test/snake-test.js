@@ -29,13 +29,13 @@ describe('Snake', function() {
       assert.equal(snake.x, 9);
     });
 
-    it('"moveUp()" should increase the "y" property by 1', function() {
+    it('"moveUp()" should decrement the "y" property by 1', function() {
       var snake = new Snake(10, 10);
       snake.moveUp();
       assert.equal(snake.y, 9);
     });
 
-    it('"moveDown()" should decrement the "y" property by 1', function() {
+    it('"moveDown()" should increase the "y" property by 1', function() {
       var snake = new Snake(10, 10);
       snake.moveDown();
       assert.equal(snake.y, 11);
