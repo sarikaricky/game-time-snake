@@ -10,35 +10,59 @@ describe('Snake', function() {
     });
 
     it('should take all these attributes', function () {
-      var snake = new Snake(10, 10, 30, 30);
-      assert.equal(snake.x, 10);
-      assert.equal(snake.y, 10);
-      assert.equal(snake.height, 30);
-      assert.equal(snake.width, 30);
+      var snake = new Snake(40, 40, 20, 20);
+      assert.equal(snake.x, 40);
+      assert.equal(snake.y, 40);
+      assert.equal(snake.height, 20);
+      assert.equal(snake.width, 20);
     });
 
-    it('"moveRight()" should increment the "x" property by 1', function() {
-      var snake = new Snake(10, 10);
+    it('"moveRight()" should increment the "x" property by 20px', function() {
+      var snake = new Snake(40, 40, 20, 20);
       snake.moveRight();
-      assert.equal(snake.x, 11);
+      assert.equal(snake.x, 60);
     });
 
-    it('"moveLeft()" should decrement the "x" property by 1', function() {
-      var snake = new Snake(10, 10);
+    it('"moveRight()" should stop movement when x reaches 380px', function() {
+      var snake = new Snake(400, 0, 20, 20);
+      snake.moveRight();
+      assert.equal(snake.x, 380);
+    });
+
+    it('"moveLeft()" should decrement the "x" property by 20px', function() {
+      var snake = new Snake(40, 40, 20, 20);
       snake.moveLeft();
-      assert.equal(snake.x, 9);
+      assert.equal(snake.x, 20);
     });
 
-    it('"moveUp()" should decrement the "y" property by 1', function() {
-      var snake = new Snake(10, 10);
+    it('"moveLeft()" should stop movement when x reaches 0px', function() {
+      var snake = new Snake(-200, 0, 20, 20);
+      snake.moveLeft();
+      assert.equal(snake.x, 0);
+    });
+
+    it('"moveUp()" should decrement the "y" property by 20px', function() {
+      var snake = new Snake(40, 40, 20, 20);
       snake.moveUp();
-      assert.equal(snake.y, 9);
+      assert.equal(snake.y, 20);
     });
 
-    it('"moveDown()" should increase the "y" property by 1', function() {
-      var snake = new Snake(10, 10);
+    it('"moveUp()" should stop movement when y reaches 0px', function() {
+      var snake = new Snake(200, -100, 20, 20);
+      snake.moveUp();
+      assert.equal(snake.y, 0);
+    });
+
+    it('"moveDown()" should increase the "y" property by 20px', function() {
+      var snake = new Snake(40, 40, 20, 20);
       snake.moveDown();
-      assert.equal(snake.y, 11);
+      assert.equal(snake.y, 60);
+    });
+
+    it('"moveDown()" should stop movement when y reaches 380px', function() {
+      var snake = new Snake(200, 400, 20, 20);
+      snake.moveDown();
+      assert.equal(snake.y, 380);
     });
 
     it('"grow()" should increase the width property by 2', function() {
