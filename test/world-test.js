@@ -18,7 +18,6 @@ describe('World', function() {
       assert.equal(world.height, 400);
       assert.equal(world.width, 400);
     });
-
   });
 
   context('assigned prototypes', function() {
