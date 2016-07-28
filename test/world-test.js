@@ -33,14 +33,14 @@ describe('World', function() {
     assert.deepEqual(world.food, []);
     });
 
-    it('should be able to tell if the Snake is colliding with food', function() {
+    it('should be able to tell if the snake is colliding with food', function() {
       var world = new World(400, 400);
-      var snake = new Snake(10, 10, 30, 30);
+      var snake = new Snake(10, 10, 20, 20);
       var food = new Food(10, 10, 20, 20);
 
       world.addSnake(snake);
       world.addFood(food);
-      assert.equal(true, world.isSnakeColliding(food));
+      assert.equal(true, world.isSnakeCollidingWithFood(food));
     });
   });
 });
