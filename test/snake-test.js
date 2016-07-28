@@ -1,6 +1,7 @@
 const assert = require('chai').assert;
 
 const Snake = require('../lib/snake');
+const Food = require('../lib/food');
 
 describe('Snake', function() {
   context('assigned attributes', function() {
@@ -64,14 +65,52 @@ describe('Snake', function() {
       snake.moveDown();
       assert.equal(snake.y, 380);
     });
+  });
 
-    it('"grow()" should increase the width property by 2', function() {
+  context('snake collisions', function() {
+    it('should return true if the x value of snake is greater than 380px', function() {
+      var snake = new Snake(400, 20, 20, 20);
+      var colliding = snake.isSnakeCollidingWithWall();
+      assert.isTrue(colliding, true);
+    });
+
+    it('should return true if the x value of the snake is less than 0px', function() {
+      var snake = new Snake(-20, 20, 20, 20);
+      var colliding = snake.isSnakeCollidingWithWall();
+      assert.isTrue(colliding, true);
+    });
+
+    it('should return true if the y value of the snake is greater than 380px', function() {
+      var snake = new Snake(20, 400, 20, 20);
+      var colliding = snake.isSnakeCollidingWithWall();
+      assert.isTrue(colliding, true);
+    });
+
+    it('should return true if the y value of the snake is less than 0px', function() {
+      var snake = new Snake(20, -20, 20, 20);
+      var colliding = snake.isSnakeCollidingWithWall();
+      assert.isTrue(colliding, true);
+    });
+
+    it('should return true if the y value of the snake is equal to the y value of the food', function() {
+      // var colliding = snake.isSnakeCollidingWithFood();
+      // assert.equal(true, snake.isSnakeCollidingWithFood(food));
+      var snake = new Snake(20, 20, 20, 20);
+      var food = new Food(20, 20, 20, 20);
+
+      assert.equal(true, snake.isSnakeCollidingWithFood(food));
+      // assert.isTrue(colliding, true);
+    });
+  });
+
+  context('snake grows', function() {
+    it.skip('"grow()" should increase the width property by 2', function() {
       var snake = new Snake(10, 10, 30);
       snake.grow();
       assert.equal(snake.width, 32);
     });
 
-    it('should be an array', function() {
+    it('the snake should be an array', function() {
       assert.equal([], 0);
     });
   });
