@@ -20,26 +20,12 @@ describe('World', function() {
     });
   });
 
-  context('assigned prototypes', function() {
-    it('should have the snake property start as an empty array', function() {
-    var world = new World(400, 400);
-    assert.isArray(world.snake);
-    assert.deepEqual(world.snake, []);
-    });
-
-    it('should have the food property start as an empty array', function() {
-    var world = new World(400, 400);
-    assert.isArray(world.food);
-    assert.deepEqual(world.food, []);
-    });
-
+  context('detect collisions', function() {
     it('should be able to tell if the snake is colliding with food', function() {
       var world = new World(400, 400);
       var snake = new Snake(10, 10, 20, 20);
       var food = new Food(10, 10, 20, 20);
 
-      world.addSnake(snake);
-      world.addFood(food);
       assert.equal(true, world.isSnakeCollidingWithFood(food));
     });
   });

@@ -1,6 +1,7 @@
 const assert = require('chai').assert;
 
 const Snake = require('../lib/snake');
+
 const Food = require('../lib/food');
 
 describe('Snake', function() {
@@ -10,6 +11,10 @@ describe('Snake', function() {
       assert.isObject(snake);
     });
 
+    // it('snake segments should be an array', function () {
+    //   assert(Array.isArray(segments));
+    // });
+
     it('should take all these attributes', function () {
       var snake = new Snake(40, 40, 20, 20);
       assert.equal(snake.x, 40);
@@ -17,7 +22,9 @@ describe('Snake', function() {
       assert.equal(snake.height, 20);
       assert.equal(snake.width, 20);
     });
+  });
 
+  context('snake movement', function() {
     it('"moveRight()" should increment the "x" property by 20px', function() {
       var snake = new Snake(40, 40, 20, 20);
       snake.moveRight();
@@ -93,25 +100,9 @@ describe('Snake', function() {
     });
 
     it('should return true if the y value of the snake is equal to the y value of the food', function() {
-      // var colliding = snake.isSnakeCollidingWithFood();
-      // assert.equal(true, snake.isSnakeCollidingWithFood(food));
       var snake = new Snake(20, 20, 20, 20);
       var food = new Food(20, 20, 20, 20);
-
       assert.equal(true, snake.isSnakeCollidingWithFood(food));
-      // assert.isTrue(colliding, true);
-    });
-  });
-
-  context('snake grows', function() {
-    it.skip('"grow()" should increase the width property by 2', function() {
-      var snake = new Snake(10, 10, 30);
-      snake.grow();
-      assert.equal(snake.width, 32);
-    });
-
-    it('the snake should be an array', function() {
-      assert.equal([], 0);
     });
   });
 });
