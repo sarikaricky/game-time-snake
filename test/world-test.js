@@ -20,24 +20,36 @@ describe('World', function() {
     });
   });
 
-  context('collision testing', function() {
-    it('Prototype, "isSnakeCollidingWithSegments" should return true if segments and head collide', function(snake) {
+  context('total snake build', function() {
+    it('should add snake objects to the total snake array', function() {
       var snake = new Snake(20, 20 , 20 , 20);
-      var head = snake.head(20, 20, 20, 20);
-      var tail = snake.tail(20, 20, 20, 20);
-      snake.isCollidingWithSegments();
-      assert.equal(snake.head, snake.tail);
+      var world = new World(400, 400);
+      var totalSnake = world.totalSnake;
+      assert.equal(totalSnake.length, 1);
+      world.growSnake();
+      assert.equal(totalSnake.length, 2);
     });
   });
 
-  // context('detect collisions', function() {
-  //   it('should return true if the snake is colliding with food', function() {
-  //     var world = new World(400, 400);
-  //     var snake = new Snake(20, 20, 20, 20);
-  //     var food = new Food(20, 20, 20, 20);
-  //     assert.equal(true, 'true');
+  // context('collision testing', function() {
+  //   it('Prototype, "isSnakeCollidingWithSegments" should return true if segments and head collide', function(snake) {
+  //     var snake = new Snake(20, 20 , 20 , 20);
+  //     var head = snake.head(20, 20, 20, 20);
+  //     var tail = snake.tail(20, 20, 20, 20);
+  //     snake.isCollidingWithSegments();
+  //     assert.equal(snake.head, snake.tail);
   //   });
   // });
+
+  context('detect collisions', function() {
+    it('should return true if the snake is colliding with food', function() {
+      var world = new World(400, 400);
+      var snake = new Snake(20, 20, 20, 20);
+      var food = new Food(20, 20, 20, 20);
+      var collision = world.isSnakeCollidingWithFood();
+      assert.equal(collision, true);
+    });
+  });
 
   context('move snake direction', function() {
     it('"rightArrow()" should move the snake right in the world', function() {
