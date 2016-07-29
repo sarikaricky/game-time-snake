@@ -99,6 +99,12 @@ describe('Snake', function() {
       assert.isTrue(colliding, true);
     });
 
+    it('should return true if the x value of the snake is equal to the x value of the food', function() {
+      var snake = new Snake(20, 20, 20, 20);
+      var food = new Food(20, 20, 20, 20);
+      assert.equal(true, snake.isSnakeCollidingWithFood(food));
+    });
+
     it('should return true if the y value of the snake is equal to the y value of the food', function() {
       var snake = new Snake(20, 20, 20, 20);
       var food = new Food(20, 20, 20, 20);
