@@ -65,7 +65,7 @@ describe('World', function() {
       assert.isFunction(world.rightArrow);
     });
 
-    it.skip('should move the snake right with the rightArrow()', function() {
+    it.skip('should move the snake right in with the rightArrow()', function() {
       var world = new World(400, 400);
       var snake = new Snake(20, 20, 20, 20);
       world.rightArrow();
