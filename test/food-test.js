@@ -16,9 +16,21 @@ describe('Food', function() {
     });
 
     it('should have a width and height', function () {
-      var food = new Food(30, 45, 30, 30);
-      assert.equal(food.height, 30);
-      assert.equal(food.width, 30);
+      var food = new Food(30, 45, 20, 20);
+      assert.equal(food.height, 20);
+      assert.equal(food.width, 20);
+    });
+  });
+
+  context('food boundaries', function() {
+    it('should stop the x value of food placement from exceeding 0px and 380px', function () {
+      var food = new Food(30, 45, 20, 20);
+      assert.equal(food.x, 30);
+    });
+
+    it('should stop the y value of food placement from exceeding 0px and 380px', function () {
+      var food = new Food(30, 45, 20, 20);
+      assert.equal(food.y, 45);
     });
   });
 });

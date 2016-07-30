@@ -21,6 +21,14 @@ describe('World', function() {
   });
 
   context('total snake build', function() {
+    it('should be an array', function() {
+      var snake = new Snake(20, 20 , 20 , 20);
+      var world = new World(400, 400);
+      var totalSnake = world.totalSnake;
+      assert.isArray(totalSnake);
+      assert.deepEqual(totalSnake, []);
+    });
+
     it('should add snake objects to the total snake array', function() {
       var snake = new Snake(20, 20 , 20 , 20);
       var world = new World(400, 400);
