@@ -26,7 +26,6 @@ describe('World', function() {
       var world = new World(400, 400);
       var totalSnake = world.totalSnake;
       assert.isArray(totalSnake);
-      assert.deepEqual(totalSnake, []);
     });
 
     it('should add snake objects to the total snake array', function() {
@@ -37,7 +36,16 @@ describe('World', function() {
       world.growSnake();
       assert.equal(totalSnake.length, 2);
     });
+
+    it('should return the number of elements in the snake array', function() {
+      var world = new World(400, 400);
+      var totalSnake = world.totalSnake;
+      world.growSnake();
+      assert.equal(totalSnake.length, 2);
+    });
   });
+
+
 
   // context('collision testing', function() {
   //   it('Prototype, "isSnakeCollidingWithSegments" should return true if segments and head collide', function(snake) {
