@@ -20,6 +20,23 @@ describe('World', function() {
     });
   });
 
+  context('snake grow', function() {
+    it('food x value will become the x value of the new snake piece', function() {
+      var world = new World(400, 400);
+      var snake = new Snake(20, 20, 20, 20);
+      var food = new Food(20, 20, 20, 20);
+      world.growSnake();
+      assert.equal(world.food.x, world.totalSnake[0].x);
+    });
+    it('food y value will become the y value of the new snake piece', function() {
+      var world = new World(400, 400);
+      var snake = new Snake(20, 20, 20, 20);
+      var food = new Food(20, 20, 20, 20);
+      world.growSnake();
+      assert.equal(world.food.y, world.totalSnake[0].y);
+    });
+  });
+
   context('total snake build', function() {
     it('should be an array', function() {
       var snake = new Snake(20, 20 , 20 , 20);
