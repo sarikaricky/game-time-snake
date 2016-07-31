@@ -7,6 +7,35 @@ const Snake = require('../lib/snake');
 const Food = require('../lib/food');
 
 describe('World', function() {
+    // SNAKE MOVEMENTS
+  context('snake movement', function() {
+    it('moveRight() should be a function', function() {
+      var world = new World(400, 400);
+      var snake = new Snake(40, 40, 20, 20, 'right');
+      assert.isFunction(world.moveRight);
+    });
+
+    it('"moveRight()" should return a the first object in the array', function() {
+      var world = new World(400, 400);
+      var snake = new Snake(40, 40, 20, 20, 'right');
+      var totalSnake = [snake];
+      var firstSnakeElement = totalSnake[0];
+      world.moveRight();
+      assert.equal(this.snake, firstSnakeElement);
+    });
+
+    // THIS TEST IS JANKY AS SHIT BUT PASSES
+    it('should remove last element of totalSnake array', function() {
+      var world = new World(400, 400);
+      var snake = new Snake(40, 40, 20, 20, 'right');
+      // var totalSnake = [snake];
+      assert.equal(world.totalSnake.length, 1);
+      world.removeTail(world.totalSnake);
+      assert.equal(world.totalSnake.length, 0);
+    });
+  });
+
+
   context('assigned attributes', function() {
     it('should create a world that the snake lives in', function () {
       var world = new World();
@@ -43,6 +72,7 @@ describe('World', function() {
       world.growSnake();
       assert.equal(totalSnake.length, 2);
     });
+
     it('should create a snake with three elements in the array', function() {
       var world = new World(400, 400);
       var totalSnake = world.totalSnake;
@@ -76,23 +106,9 @@ describe('World', function() {
       assert.isFunction(world.rightArrow);
     });
 
-    it.skip('should move the snake right in with the rightArrow()', function() {
-      var world = new World(400, 400);
-      var snake = new Snake(20, 20, 20, 20);
-      world.rightArrow();
-      assert.equal(snake.x, 40);
-    });
-
     it('"leftArrow()" should move the snake left in the world', function() {
       var world = new World(400, 400);
       assert.isFunction(world.leftArrow);
-    });
-
-    it.skip('should move the snake left with the leftArrow()', function() {
-      var world = new World(400, 400);
-      var snake = new Snake(20, 20, 20, 20);
-      world.leftArrow();
-      assert.equal(snake.x, 0);
     });
 
     it('"upArrow()" should move the snake up in the world', function() {
@@ -100,23 +116,9 @@ describe('World', function() {
       assert.isFunction(world.upArrow);
     });
 
-    it.skip('should move the snake up with the upArrow()', function() {
-      var world = new World(400, 400);
-      var snake = new Snake(20, 20, 20, 20);
-      world.upArrow();
-      assert.equal(snake.y, 0);
-    });
-
     it('"downArrow()" should move the snake down in the world', function() {
       var world = new World(400, 400);
       assert.isFunction(world.downArrow);
-    });
-
-    it.skip('should move the snake down with the downArrow()', function() {
-      var world = new World(400, 400);
-      var snake = new Snake(20, 20, 20, 20);
-      world.downArrow();
-      assert.equal(snake.y, 40);
     });
   });
 });
