@@ -43,9 +43,12 @@ describe('World', function() {
       world.growSnake();
       assert.equal(totalSnake.length, 2);
     });
+    it('should create a snake with three elements in the array', function() {
+      var world = new World(400, 400);
+      var totalSnake = world.totalSnake;
+      world.createTotalSnake();
+    });
   });
-
-
 
   // context('collision testing', function() {
   //   it('Prototype, "isSnakeCollidingWithSegments" should return true if segments and head collide', function(snake) {
