@@ -1,5 +1,4 @@
 const assert = require('chai').assert;
-
 const Food = require('../lib/food');
 
 describe('Food', function() {
