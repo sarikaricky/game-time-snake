@@ -1,11 +1,21 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link href='https://fonts.googleapis.com/css?family=Russo+One' rel='stylesheet' type='text/css'>
   <meta charset="utf-8">
   <title>Game Time</title>
 </head>
 <body>
   <h1>Snake Game</h1>
+  <section id="game-score">
+    <p id="user-level">Level:</p>
+    <p id="user-score">Score:</p>
+  </section>
+  <canvas id="game-canvas" width="400" height="400"></canvas>
+  <section class="user-interaction">
+    <button id="start-button"></button>
+    <button id="reset-button"></button>
   <canvas id="game-canvas" width="400" height="400" style="border:2px solid black;"></canvas>
   <section>
     <h2 id="user-level">Level: </h2>

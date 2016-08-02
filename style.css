@@ -1,0 +1,70 @@
+body {
+  font-family: 'Russo One', sans-serif;
+  display: flex;
+  flex-direction:  column;
+  margin: auto;
+  width: 450px;
+  background-color: black;
+  color: white;
+}
+
+h1 {
+  margin: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  /*width: 450px;*/
+}
+
+#game-canvas {
+  background: url(../images/background-grid.png) no-repeat;
+  background-size: 400px;
+  background-position: left top;
+  opacity: 9;
+  height: 400px;
+  width: 400px;
+  margin: auto;
+}
+
+#game-score {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+
+}
+
+.user-interaction {
+  display: flex;
+  flex-direction: row;
+  height: 100px;
+  padding-right: 40px;
+  padding-top: 20px;
+  justify-content: flex-end;
+
+}
+
+#start-button {
+  background: url(../images/1470134587_right.png) no-repeat;
+
+  background-color: transparent;
+  /*background-position: center;*/
+  background-size: 50px;
+  border: none;
+  height: 50px;
+  width: 50px;
+  margin-right: 20px;
+  /*justify-content: flex-end;*/
+  display: flex;
+}
+
+
+#reset-button {
+  background: url(../images/1470134617_stop.png) no-repeat;
+  background-color: transparent;
+  /*background-position: center;*/
+  background-size: 50px;
+  border: none;
+  height: 50px;
+  width: 50px;
+  /*justify-content: flex-end;*/
+  display: flex;
+}
