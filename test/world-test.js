@@ -58,6 +58,7 @@ describe('World', function() {
       var world = new World(400, 400);
       var snake = new Snake(20, 20, 20, 20);
       var food = new Food(20, 20, 20, 20);
+      // debugger;
       world.growSnake();
       assert.equal(world.food.y, world.totalSnake[0].y);
     });
@@ -112,12 +113,27 @@ describe('World', function() {
       var collision = world.isSnakeCollidingWithFood();
       assert.equal(collision, true);
     });
+
+    it('should return true if totalSnake[0].x equals snake.x of any of the snake objects', function() {
+      var world = new World(400, 400);
+      var snake = new Snake(20, 20, 20, 20, 'right');
+      var totalSnake = [snake, snake];
+      assert.equal(world.isCollidingWithSelf(), true);
+    });
+
+    it('should return true if totalSnake[0].y equals snake.y of any of the snake objects', function() {
+      var world = new World(400, 400);
+      var snake = new Snake(20, 20, 20, 20);
+      var totalSnake = [this.snake, this.snake];
+      var collision = world.isCollidingWithSelf();
+      assert.equal(collision, true);
+    });
   });
 
   context('move snake direction', function() {
     it('"rightArrow()" should move the snake right in the world', function() {
       var world = new World(400, 400);
-      assert.isFunction(world.rightArrow);
+      assert.isFun4ction(world.rightArrow);
     });
 
     it('"leftArrow()" should move the snake left in the world', function() {
