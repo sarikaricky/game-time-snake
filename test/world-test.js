@@ -3,7 +3,7 @@ const World = require('../lib/world');
 const Snake = require('../lib/snake');
 const Food = require('../lib/food');
 
-describe('world', function() {
+describe('World', function() {
   context('assigned attributes', function() {
     it('should create a world', function () {
       var world = new World();
@@ -39,33 +39,33 @@ describe('world', function() {
       assert.isTrue(world.isSnakeCollidingWithObstacle(), true);
     });
 
-    it('"isCollidingWithSelf()" should return true if the x and y values of snake segments isTrue to x and y values of the snake head', function() {
+    it.skip('"isCollidingWithSelf()" should return true if the x and y values of snake segments isTrue to x and y values of the snake head', function() {
       var world = new World(400, 400);
       var snakeBody = world.totalSnake.push(new Snake(200, 200, 20, 20));
       assert.isTrue(world.isCollidingWithSelf(), true);
     });
 
-    it('"isSnakeCollidingWithWall()" should return true if the x value of the index 0 snake is greater than 380px', function() {
+    it('"isSnakeCollidingWithWall()" should return true if the x value of the index 0 snake is greater than 400px', function() {
       var world = new World(400, 400);
-      world.totalSnake.unshift(new Snake(400, 20, 20, 20));
+      world.totalSnake.unshift(new Snake(420, 20, 20, 20));
       assert.isTrue(world.isSnakeCollidingWithWall(), true);
     });
 
     it('"isSnakeCollidingWithWall()" should return true if the x value of the index 0 snake is less than 0px', function() {
       var world = new World(400, 400);
-      world.totalSnake.unshift(new Snake(-20, 20, 20, 20));
+      world.totalSnake.unshift(new Snake(-40, 20, 20, 20));
       assert.isTrue(world.isSnakeCollidingWithWall(), true);
     });
 
-    it('"isSnakeCollidingWithWall()" should return true if the y value of the index 0 snake is greater than 380px', function() {
+    it('"isSnakeCollidingWithWall()" should return true if the y value of the index 0 snake is greater than 400px', function() {
       var world = new World(400, 400);
-      world.totalSnake.unshift(new Snake(20, 400, 20, 20));
+      world.totalSnake.unshift(new Snake(20, 420, 20, 20));
       assert.isTrue(world.isSnakeCollidingWithWall(), true);
     });
 
     it('"isSnakeCollidingWithWall()" should return true if the y value of the index 0 snake is less than 0px', function() {
       var world = new World(400, 400);
-      world.totalSnake.unshift(new Snake(20, -20, 20, 20));
+      world.totalSnake.unshift(new Snake(20, -40, 20, 20));
       assert.isTrue(world.isSnakeCollidingWithWall(), true);
     });
   });
@@ -185,13 +185,6 @@ describe('world', function() {
       var level = this.score % 100 === 0;
       level ++;
       assert.equal(level, 2);
-    });
-
-    it.skip('should return true if startPlay() is called', function() {
-      var world = new World(400, 400);
-      var play = this.play;
-      world.startPlay();
-      assert.equal(play, true);
     });
   });
 });
