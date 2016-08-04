@@ -1,17 +1,17 @@
 body {
-  font-family: 'Russo One', sans-serif;
-  display: flex;
-  flex-direction:  column;
-  margin: auto;
-  width: 450px;
   background-color: black;
   color: white;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Russo One', sans-serif;
+  margin: auto;
+  width: 400px;
 }
 
 h1 {
   margin: auto;
-  margin-top: 20px;
   margin-bottom: 30px;
+  margin-top: 20px;
 }
 
 p {
@@ -19,14 +19,33 @@ p {
   margin: 0;
 }
 
+.game-overlay {
+  display: flex;
+  height: 400px;
+  opacity: 0.5;
+  width: 400px;
+}
+
+.game-over-overlay {
+  display: flex;
+  display: none;
+  height: 400px;
+  opacity: 0.5;
+  width: 400px;
+}
+
+.game-over-message, .game-instructions {
+  padding-top: 140px;
+  text-align: center;
+}
+
 #game-canvas {
   background: url(../images/background-grid.png) no-repeat;
-  background-size: 400px;
   background-position: left top;
-  opacity: 9;
+  background-size: 400px;
   height: 400px;
-  width: 400px;
   margin: auto;
+  width: 400px;
 }
 
 #game-score {
@@ -40,29 +59,28 @@ p {
   display: flex;
   flex-direction: row;
   height: 100px;
+  justify-content: flex-end;
   padding-right: 40px;
   padding-top: 20px;
-  justify-content: flex-end;
 }
 
 #start-button {
-  background: url(../images/1470134587_right.png) no-repeat;
+  background: url(../images/play-button.png) no-repeat;
   background-color: transparent;
   background-size: 50px;
   border: none;
-  height: 50px;
-  width: 50px;
-  margin-right: 20px;
   display: flex;
+  height: 50px;
+  margin-right: 20px;
+  width: 50px;
 }
 
-
 #reset-button {
-  background: url(../images/1470134617_stop.png) no-repeat;
-  background-color: transparent;
-  background-size: 50px;
-  border: none;
-  height: 50px;
-  width: 50px;
-  display: flex;
+ background: url(../images/refresh-button.png) no-repeat;
+ background-color: transparent;
+ background-size: 50px;
+ border: none;
+ height: 50px;
+ width: 50px;
+ display: flex;
 }
