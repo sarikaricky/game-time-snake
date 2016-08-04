@@ -5,12 +5,12 @@ const Food = require('../lib/food');
 
 describe('World', function() {
   context('assigned attributes', function() {
-    it('should create a world', function () {
+    it('should create a world', function() {
       var world = new World();
       assert.isObject(world);
     });
 
-    it('should have a width and height', function () {
+    it('should have a width and height', function() {
       var world = new World(400, 400);
       assert.equal(world.height, 400);
       assert.equal(world.width, 400);
@@ -19,7 +19,7 @@ describe('World', function() {
 
   context('totalSnake build', function() {
     it('should be an array', function() {
-      var snake = new Snake(20, 20 , 20 , 20);
+      var snake = new Snake(20, 20, 20, 20);
       var world = new World(400, 400);
       var totalSnake = world.totalSnake;
       assert.isArray(totalSnake);
@@ -174,7 +174,7 @@ describe('World', function() {
   });
 
   context('game functionality', function() {
-    it('"changeScore()" should increase the score by 20 when the snake collides with food', function() {
+    it('"increaseScore()" should increase the score by 20 when the snake collides with food', function() {
       this.score = 0;
       var score = this.score;
       score += 20;
