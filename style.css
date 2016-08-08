@@ -40,7 +40,7 @@ p {
 }
 
 #game-canvas {
-  background: url(../images/background-grid.png) no-repeat;
+  background: url(images/background-grid.png) no-repeat;
   background-position: left top;
   background-size: 400px;
   height: 400px;
@@ -65,7 +65,7 @@ p {
 }
 
 #start-button {
-  background: url(../images/play-button.png) no-repeat;
+  background: url(images/play-button.png) no-repeat;
   background-color: transparent;
   background-size: 50px;
   border: none;
@@ -76,7 +76,7 @@ p {
 }
 
 #reset-button {
- background: url(../images/refresh-button.png) no-repeat;
+ background: url(images/refresh-button.png) no-repeat;
  background-color: transparent;
  background-size: 50px;
  border: none;
